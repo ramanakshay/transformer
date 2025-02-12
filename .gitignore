@@ -165,10 +165,10 @@ cython_debug/
 .DS_Store
 
 # Hydra Outputs
-transformer/outputs/
+src/outputs/
 
 # Model Weights
-transfromer/model/weights/
+src/model/weights/
 
 # Dataset directory
-transformer/data/datasets/
+src/data/datasets/

@@ -1,8 +1,8 @@
 device: cpu
 
 data:
-    dataset_path: /Users/akshay/transformer/transformer/data/dataset/multi30k/
-    vocab_path: /Users/akshay/transformer/transformer/data/dataset/vocab.pt
+    dataset_path: /Users/akshay/transformer/src/data/dataset/multi30k/
+    vocab_path: /Users/akshay/transformer/src/data/dataset/vocab.pt
     max_padding: 72
     device: ${device}
     batch_size: 32
