@@ -16,8 +16,6 @@ def main(config : DictConfig) -> None:
     model = Translator(src_vocab, tgt_vocab, config.model)
     print('Model Created.')
 
-
-
     ## ALGORITHM ##
     algorithm = Trainer(data, model, config.algorithm)
     algorithm.run()
