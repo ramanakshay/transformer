@@ -1,8 +1,7 @@
 import os
-from os.path import exists
 import spacy
-
 import torch
+from os.path import exists
 from torch.nn.functional import pad
 from torchtext.vocab import build_vocab_from_iterator
 from torchnlp.datasets import multi30k_dataset

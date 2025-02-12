@@ -20,7 +20,6 @@ class SimpleLossCompute:
         return sloss.data * norm, sloss
 
 
-
 class LabelSmoothing(nn.Module):
     # "Implement label smoothing."
 

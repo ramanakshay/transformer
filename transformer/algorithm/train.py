@@ -1,10 +1,11 @@
+import time
 import torch
 from torch import nn
 from torch.optim.lr_scheduler import LambdaLR
-import time
 
-from .utils import Batch
-from .loss import SimpleLossCompute, LabelSmoothing
+
+from algorithm.utils import Batch
+from algorithm.loss import SimpleLossCompute, LabelSmoothing
 
 def rate(step, model_size, factor, warmup):
     """
@@ -32,8 +33,7 @@ class Trainer(object):
         self.model = model
         self.config = config
         self.dataloaders = data.get_dataloaders()
-
-        criterion = LabelSmoothing(len(self.data.vocab['en']) , padding_idx=0, smoothing=self.config.smoothing)
+        criterion = LabelSmoothing(len(self.data.vocab['en']) , padding_idx=2, smoothing=self.config.smoothing)
         self.loss = SimpleLossCompute(self.model.transformer.generator, criterion)
         self.optimizer = torch.optim.Adam(
             self.model.transformer.parameters(), lr=self.config.lr, betas=(0.9, 0.98), eps=1e-9

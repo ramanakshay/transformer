@@ -2,7 +2,7 @@ import torch
 from torch.utils.data import DataLoader
 from torchnlp.datasets import multi30k_dataset
 
-from .preprocessing import load_tokenizers, load_vocab, tokenize, Collator
+from data.preprocessing import load_tokenizers, load_vocab, tokenize, Collator
 
 
 class TranslateData(object):
