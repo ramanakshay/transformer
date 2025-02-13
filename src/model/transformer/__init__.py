@@ -1,3 +1,3 @@
 __all__ = ['Transformer']
 
-from .transformer import Transformer
+from .model import Transformer

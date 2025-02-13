@@ -171,4 +171,4 @@ src/outputs/
 src/model/weights/
 
 # Dataset directory
-src/data/datasets/
+src/data/dataset/

@@ -1,7 +1,6 @@
 import math
 import torch
 from torch import nn
-
 from model.transformer.utils import clones
 
 def attention(query, key, value, mask=None, dropout=None):

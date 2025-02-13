@@ -17,6 +17,7 @@ def main(config : DictConfig) -> None:
     print('Model Created.')
 
     ## ALGORITHM ##
+    print('Running Algorithm...')
     algorithm = Trainer(data, model, config.algorithm)
     algorithm.run()
     print('Done!')

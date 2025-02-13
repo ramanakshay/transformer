@@ -1,10 +1,8 @@
 import torch
 from torch import nn
 import copy
-
-from model.transformer.layers import *
-from model.transformer.embeddings import *
-from model.transformer.blocks import *
+from model.transformer.embeddings import Embeddings, PositionalEncoding
+from model.transformer.blocks import Encoder, Decoder, Generator
 
 
 class EncoderDecoder(nn.Module):
@@ -34,16 +32,11 @@ other models.
 
 class Transformer(EncoderDecoder):
     def __init__(self, src_vocab, tgt_vocab, N=6, d_model=512, d_ff=2048, h=8, dropout=0.1):
-        c = copy.deepcopy
-        attn = MultiHeadedAttention(h, d_model)
-        ff = PositionwiseFeedForward(d_model, d_ff, dropout)
-        position = PositionalEncoding(d_model, dropout)
-
         EncoderDecoder.__init__(
             self,
-            encoder = Encoder(EncoderLayer(d_model, c(attn), c(ff), dropout), N),
-            decoder = Decoder(DecoderLayer(d_model, c(attn), c(attn), c(ff), dropout), N),
-            src_embed = nn.Sequential(Embeddings(d_model, src_vocab), c(position)),
-            tgt_embed = nn.Sequential(Embeddings(d_model, tgt_vocab), c(position)),
+            encoder = Encoder(N, h, d_model, d_ff, dropout),
+            decoder = Decoder(N, h, d_model, d_ff, dropout),
+            src_embed = nn.Sequential(Embeddings(d_model, src_vocab), PositionalEncoding(d_model, dropout)),
+            tgt_embed = nn.Sequential(Embeddings(d_model, tgt_vocab), PositionalEncoding(d_model, dropout)),
             generator = Generator(d_model, tgt_vocab)
             )
