@@ -31,9 +31,10 @@ class Trainer(object):
     def __init__(self, data, model, config):
         self.data = data
         self.model = model
-        self.config = config
-        self.dataloaders = data.get_dataloaders()
+        self.config = config.algorithm
+        self.dataloaders = data.create_dataloaders()
         criterion = LabelSmoothing(len(self.data.vocab['en']) , padding_idx=2, smoothing=self.config.smoothing)
+
         self.loss = SimpleLossCompute(self.model.transformer.generator, criterion)
         self.optimizer = torch.optim.Adam(
             self.model.transformer.parameters(), lr=self.config.lr, betas=(0.9, 0.98), eps=1e-9

@@ -12,7 +12,7 @@ def subsequent_mask(size):
 
 class Translator(object):
     def __init__(self, src_vocab, tgt_vocab, config):
-        self.config = config
+        self.config = config.model
         self.transformer = Transformer(
             src_vocab = src_vocab,
             tgt_vocab = tgt_vocab,
