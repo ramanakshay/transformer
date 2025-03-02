@@ -45,7 +45,7 @@ conda create -n transformer_env python=3.11
 # activate transformer_env
 conda activate transformer_env
 
-# install other dependencies
+# install dependencies
 pip install -r requirements.txt
 ```
 
@@ -59,6 +59,8 @@ python main.py
 ```
 
 ## TODOs
+
+Any kind of enhancement or contribution is welcomed.
 
 - [ ] implement distributed training
 - [ ] support for loggers
