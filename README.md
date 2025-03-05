@@ -27,7 +27,7 @@ The Translator model supports the following methods:
 
 Given a batch of masked source and target language data, returns the output of the decoder for each target language input. 
 
-**`model.greedy_decode(src: Tensor, src_mask: Tensor, max_len: Integer, start_symbol: Integer)`**
+**`model.generate(src: Tensor, src_mask: Tensor, max_len: Integer, start_symbol: Integer)`**
 
 Given a masked source language data, performs greedy decoding to predict the target sequence. 
 

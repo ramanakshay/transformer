@@ -10,7 +10,7 @@ def subsequent_mask(size):
     )
     return subsequent_mask == 0
 
-class Translator(object):
+class Translator:
     def __init__(self, src_vocab, tgt_vocab, config):
         self.config = config.model
         self.transformer = Transformer(
@@ -31,7 +31,7 @@ class Translator(object):
     def predict(self, src, tgt, src_mask, tgt_mask):
         return self.transformer(src, tgt, src_mask, tgt_mask)
 
-    def greedy_decode(self, src, src_mask, max_len, start_symbol):
+    def generate(self, src, src_mask, max_len, start_symbol):
         memory = self.transformer.encode(src, src_mask)
         ys = torch.zeros(1,1).fill_(start_symbol).type_as(src.data)
         for i in range(max_len - 1):

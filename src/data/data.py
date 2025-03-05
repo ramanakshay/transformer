@@ -5,7 +5,7 @@ from torchtext.data.functional import to_map_style_dataset
 from data.preprocessing import load_tokenizers, load_vocab, tokenize, Collator
 
 
-class TranslateData(object):
+class TranslateData:
     def __init__(self, config):
         self.config = config.data
 

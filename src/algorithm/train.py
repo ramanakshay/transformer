@@ -27,7 +27,7 @@ class TrainState:
     samples: int = 0  # total # of examples used
     tokens: int = 0  # total # of tokens processed
 
-class Trainer(object):
+class Trainer:
     def __init__(self, data, model, config):
         self.data = data
         self.model = model

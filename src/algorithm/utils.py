@@ -8,10 +8,10 @@ def subsequent_mask(size):
     )
     return subsequent_mask == 0
 
-class Batch(object):
+class Batch:
     """
-Object for holding a batch of data with mask during training.
-"""
+    Object for holding a batch of data with mask during training.
+    """
 
     def __init__(self, src, tgt=None, pad=2):  # 2 = <blank>
         self.src = src

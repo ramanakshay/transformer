@@ -83,7 +83,7 @@ def load_vocab(tokenizers, vocab_path, dataset_path):
 
 
 
-class Collator(object):
+class Collator:
     def __init__(self, tokenizer, vocab, device, max_padding):
         self.tokenizer = tokenizer
         self.vocab = vocab
