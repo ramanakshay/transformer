@@ -167,8 +167,5 @@ cython_debug/
 # Hydra Outputs
 src/outputs/
 
-# Model Weights
-src/model/weights/
-
 # Dataset directory
 src/data/dataset/
