@@ -3,7 +3,7 @@
 The Transformer is an encoder-decoder model architecture that uses the attention mechanism to process and learn from sequential data. This project implements the original transformer model introduced in the "Attention Is All You Need" paper for machine translation. 
 
 <p align="center">
-  <img width="80%" alt="Transformer Architecture" src="assets/transformer_architecture.svg" >
+  <img width="35%" alt="Transformer Architecture" src="assets/transformer_architecture.svg" >
 </p>
 
 
