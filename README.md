@@ -58,7 +58,7 @@ cd src
 python main.py
 ```
 
-## TODOs
+## To-Dos
 
 Any kind of enhancement or contribution is welcomed.
 
